@@ -2,6 +2,7 @@ package es.schooleando.xkcdcomic;
 
 import android.content.Intent;
 import android.os.Handler;
+import android.os.ResultReceiver;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,7 +14,6 @@ public class ComicActivity extends AppCompatActivity implements BgResultReceiver
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comic);
 
-        // creamos el BgResultReceiver
         mResultReceiver = new BgResultReceiver(new Handler());
         mResultReceiver.setReceiver(this);
 
@@ -21,7 +21,7 @@ public class ComicActivity extends AppCompatActivity implements BgResultReceiver
         Intent intent = new Intent(this, DownloadIntentService.class);
         intent.putExtra("url", "http://xkcd.com/info.0.json");
         intent.putExtra("receiver", mResultReceiver);
-        startActivity(intent);
+        startService(intent);
     }
 
 
@@ -32,7 +32,7 @@ public class ComicActivity extends AppCompatActivity implements BgResultReceiver
         //      PROGRESS -> nos estamos descargando la imagen (ProgressBar)
         //      OK -> nos hemos descargado la imagen correctamente. (ImageView)
         // Debeis controlar cada caso
-        
+
 
     }
 

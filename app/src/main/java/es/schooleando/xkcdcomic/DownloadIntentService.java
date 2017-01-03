@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 import android.util.Log;
 
-public class DownloadIntentService extends IntentService {
+public class DownloadIntentService extends IntentService  {
     private static final String TAG = DownloadIntentService.class.getSimpleName();
     private ResultReceiver mReceiver;
 
