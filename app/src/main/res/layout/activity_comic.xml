@@ -27,5 +27,5 @@
         android:layout_alignTop="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
         android:max="100"
-        android:progress="0" />
+        android:progress="0"/>
 </RelativeLayout>
